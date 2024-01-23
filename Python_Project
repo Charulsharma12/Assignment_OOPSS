@@ -1,0 +1,58 @@
+class Account:
+    def __init__(self, account_number, balance = 0):
+        self.account_number = account_number 
+        self.balance = balance 
+    def deposit(self, amount):
+        pass 
+
+    def withdraw(self, amount):
+        pass 
+
+    def get_balance(self):
+        return self.balance 
+
+class Checking_Account(Account):
+    def deposit(self, amount):
+        self.balance += amount 
+        print(f"Daeposite ${amount}, resulting balance is ${self.balance}")
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount 
+            print(f"Amount withdraw is ${amount}, resulting balance is ${self.balance}")
+        else:
+            print("Insufficient funds")
+
+        
+class Savings_Account(Account):
+    def deposit(self, amount):
+        self.balance += amount 
+        print(f"Daeposite ${amount}, resulting balance is ${self.balance}")
+            
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount 
+            print(f"Amount withdraw is ${amount}, resulting balance is ${self.balance}")
+        else:
+            print("Insufficient funds")
+class Business_Account(Account):
+    def deposit(self, amount):
+        self.balance += amount 
+        print(f"Daeposite ${amount}, resulting balance is ${self.balance}")
+                        
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount 
+            print(f"Amount withdraw is ${amount}, resulting balance is ${self.balance}")
+        else:
+            print("Insufficient funds")
+
+checking_account = Checking_Account(account_number = "CA123", balance = 1000)
+savings_account = Saving_Account(account_number = "BA123", balance = 2000)
+business_account = Business_Account(account_number = "ABC123", balance = 3000)
+
+checking_account.deposit(500)
+checking_account.withdraw(40)
+
+savings_account.deposit(2000)
+savings_account.withdraw(500)
